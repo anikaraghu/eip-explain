@@ -35,10 +35,25 @@ export async function GET(req: NextRequest) {
             flexDirection: 'column',
             alignItems: 'center',
             justifyContent: 'center',
-            backgroundColor: '#030303',
+            background: 'linear-gradient(to bottom right, #1a1a1a, #2d1c4f)',
             padding: '40px',
           }}
         >
+          {/* Ethereum logo in the background */}
+          <div
+            style={{
+              position: 'absolute',
+              top: '50%',
+              left: '50%',
+              transform: 'translate(-50%, -50%)',
+              opacity: '0.1',
+              fontSize: '400px',
+            }}
+          >
+            Ξ
+          </div>
+
+          {/* Content container */}
           <div
             style={{
               display: 'flex',
@@ -46,23 +61,54 @@ export async function GET(req: NextRequest) {
               alignItems: 'center',
               justifyContent: 'center',
               textAlign: 'center',
+              zIndex: 1,
+              background: 'rgba(0, 0, 0, 0.4)',
+              padding: '40px',
+              borderRadius: '20px',
+              border: '2px solid rgba(255, 255, 255, 0.1)',
             }}
           >
+            {/* App name */}
+            <div
+              style={{
+                fontSize: '32px',
+                color: '#8247e5',
+                fontWeight: 600,
+                marginBottom: '20px',
+              }}
+            >
+              EIP Explainer
+            </div>
+
+            {/* Main text */}
             {lines.map((line, i) => (
               <div
                 key={i}
                 style={{
-                  fontSize: '60px',
+                  fontSize: '56px',
                   fontWeight: 700,
                   letterSpacing: '-0.025em',
                   color: 'white',
-                  marginTop: '20px',
+                  marginTop: '10px',
                   padding: '0 20px',
+                  textShadow: '2px 2px 4px rgba(0, 0, 0, 0.3)',
                 }}
               >
                 {line}
               </div>
             ))}
+          </div>
+
+          {/* Footer */}
+          <div
+            style={{
+              position: 'absolute',
+              bottom: '20px',
+              fontSize: '24px',
+              color: 'rgba(255, 255, 255, 0.7)',
+            }}
+          >
+            Understand Ethereum Improvement Proposals
           </div>
         </div>
       ),
