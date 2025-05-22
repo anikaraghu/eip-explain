@@ -38,33 +38,28 @@ export async function GET(req: NextRequest) {
             background: 'linear-gradient(to bottom right, #1a1a1a, #2d1c4f)',
             padding: '40px',
             position: 'relative',
+            overflow: 'hidden',
           }}
         >
-          {/* Ethereum logo in the background */}
+          {/* Background container */}
           <div
             style={{
               position: 'absolute',
-              top: '50%',
-              left: '50%',
-              transform: 'translate(-50%, -50%)',
-              opacity: '0.15',
-              width: '500px',
-              height: '500px',
+              inset: 0,
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              margin: '0 auto',
+              opacity: '0.15',
             }}
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="https://eip-explain.vercel.app/images/ethereum-logo.png"
               alt="Ethereum Logo"
-              width={500}
-              height={500}
               style={{
+                width: '800px',
+                height: '800px',
                 objectFit: 'contain',
-                margin: 'auto',
               }}
             />
           </div>
