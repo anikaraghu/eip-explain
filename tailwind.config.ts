@@ -21,6 +21,9 @@ const config: Config = {
           "100%": { opacity: "0" },
         },
       },
+      aspectRatio: {
+        'frame': '1.91/1',
+      },
     },
   },
   plugins: [],
