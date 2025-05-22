@@ -6,6 +6,15 @@ const nextConfig = {
     config.externals.push("pino-pretty", "lokijs", "encoding");
     return config;
   },
+  // Handle .well-known directory
+  async rewrites() {
+    return [
+      {
+        source: '/.well-known/farcaster/frame.json',
+        destination: '/api/frame/metadata'
+      }
+    ];
+  }
 };
 
 export default nextConfig;
