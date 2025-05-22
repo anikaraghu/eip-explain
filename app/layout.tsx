@@ -15,7 +15,7 @@ export async function generateMetadata(): Promise<Metadata> {
     version: "next",
     imageUrl: `${baseUrl}/api/og?text=EIP%20Explainer`,
     button: {
-      title: "Learn About EIPs",
+      title: "Search an EIP",
       action: {
         type: "launch_frame",
         name: "EIP Explainer",
