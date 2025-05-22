@@ -5,7 +5,7 @@ const openai = new OpenAI({
 });
 
 const PROMPTS = {
-  simple: "Explain this EIP in simple terms that a non-technical person can understand. Focus on the main purpose and impact:",
+  simple: "Give a simple and concise explanation (less than 100 words) of this EIP in simple terms that a non-technical person can understand. Focus on the main purpose and impact:",
   detailed: "Provide a comprehensive explanation of this EIP, including its purpose, motivation, and main changes. Include relevant context but avoid deep technical details:",
   technical: "Give a technical explanation of this EIP, including specific implementation details, technical changes, and potential implications for developers:",
 };
