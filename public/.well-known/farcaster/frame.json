@@ -1,6 +1,6 @@
 {
   "frame": {
-    "image": "https://eip-explain.vercel.app/api/og?text=EIP%20Explainer",
+    "image": "https://eip-explain.vercel.app/api/og?text=EIP%20Explainer&v=3",
     "version": "vNext",
     "buttons": [
       {

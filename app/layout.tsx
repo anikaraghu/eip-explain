@@ -13,14 +13,14 @@ export async function generateMetadata(): Promise<Metadata> {
   const baseUrl = process.env.NEXT_PUBLIC_HOST || "https://eip-explain.vercel.app";
   const miniAppEmbed = {
     version: "next",
-    imageUrl: `${baseUrl}/api/og?text=EIP%20Explainer`,
+    imageUrl: `${baseUrl}/api/og?text=EIP%20Explainer&v=2`,
     button: {
-      title: "Search an EIP",
+      title: "Learn About EIPs",
       action: {
         type: "launch_frame",
         name: "EIP Explainer",
         url: baseUrl,
-        splashImageUrl: `${baseUrl}/api/og?text=EIP%20Explainer`,
+        splashImageUrl: `${baseUrl}/api/og?text=EIP%20Explainer&v=2`,
         splashBackgroundColor: "#030303"
       }
     }
@@ -32,11 +32,11 @@ export async function generateMetadata(): Promise<Metadata> {
     openGraph: {
       title: "EIP Explainer",
       description: "Understand Ethereum Improvement Proposals in simple terms",
-      images: [`${baseUrl}/api/og?text=EIP%20Explainer`],
+      images: [`${baseUrl}/api/og?text=EIP%20Explainer&v=2`],
     },
     other: {
       "fc:frame": JSON.stringify(miniAppEmbed),
-      "fc:frame:image": `${baseUrl}/api/og?text=EIP%20Explainer`,
+      "fc:frame:image": `${baseUrl}/api/og?text=EIP%20Explainer&v=2`,
       "fc:frame:button:1": "Enter EIP Number",
       "fc:frame:button:1:action": "input",
       "fc:frame:input:text": "Enter EIP number (e.g. 1559)",
