@@ -1,0 +1,16 @@
+{
+  "frame": {
+    "version": "1",
+    "name": "EIP Explainer",
+    "iconUrl": "https://eip-explain.vercel.app/api/og?text=EIP%20Explainer",
+    "homeUrl": "https://eip-explain.vercel.app",
+    "description": "Understand Ethereum Improvement Proposals in simple terms",
+    "primaryCategory": "education",
+    "tags": ["ethereum", "eip", "education", "blockchain"],
+    "subtitle": "Learn about EIPs easily",
+    "imageUrl": "https://eip-explain.vercel.app/api/og?text=EIP%20Explainer",
+    "buttonTitle": "Learn About EIPs",
+    "splashImageUrl": "https://eip-explain.vercel.app/api/og?text=EIP%20Explainer",
+    "splashBackgroundColor": "#030303"
+  }
+} 

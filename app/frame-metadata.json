@@ -1,6 +1,6 @@
 {
   "frame": {
-    "image": "https://eip-explain-yu9b.vercel.app/api/og?text=EIP%20Explainer",
+    "image": "https://eip-explain.vercel.app/api/og?text=EIP%20Explainer",
     "version": "vNext",
     "buttons": [
       {
@@ -11,6 +11,6 @@
     "input": {
       "text": "Enter EIP number (e.g. 1559)"
     },
-    "postUrl": "https://eip-explain-yu9b.vercel.app/api/frame"
+    "postUrl": "https://eip-explain.vercel.app/api/frame"
   }
 } 

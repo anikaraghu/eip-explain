@@ -1,8 +1,9 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import { ExplanationMode } from "./components/ExplanationMode";
 import { ExplanationView } from './components/ExplanationView';
+import { sdk } from '@farcaster/frame-sdk';
 
 type ViewState = 'input' | 'mode-select' | 'explanation';
 
@@ -30,6 +31,11 @@ export default function App() {
   const handleModeSelect = useCallback((mode: 'simple' | 'detailed' | 'technical') => {
     setSelectedMode(mode);
     setViewState('explanation');
+  }, []);
+
+  useEffect(() => {
+    // Hide the splash screen when the app is ready
+    sdk.actions.ready();
   }, []);
 
   return (
