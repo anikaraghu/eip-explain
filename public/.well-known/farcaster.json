@@ -8,7 +8,7 @@
   "url": "https://eip-explain.vercel.app",
   "buttons": [
     {
-      "label": "Learn About EIPs",
+      "label": "Search an EIP",
       "action": "link"
     }
   ]
