@@ -7,12 +7,17 @@ const nextConfig = {
     return config;
   },
   // Handle .well-known directory
-  async rewrites() {
+  async headers() {
     return [
       {
         source: '/.well-known/farcaster/frame.json',
-        destination: '/api/frame/metadata'
-      }
+        headers: [
+          {
+            key: 'Content-Type',
+            value: 'application/json',
+          },
+        ],
+      },
     ];
   }
 };
