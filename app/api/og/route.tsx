@@ -10,7 +10,7 @@ export async function GET(req: NextRequest) {
 
     // Split text into chunks of roughly 50 characters
     const words = text.split(' ');
-    let lines = [];
+    const lines: string[] = [];
     let currentLine = '';
 
     for (const word of words) {
@@ -71,8 +71,8 @@ export async function GET(req: NextRequest) {
         height: 630,
       }
     );
-  } catch (e: any) {
-    console.error(`Failed to generate image: ${e.message}`);
+  } catch (err: unknown) {
+    console.error(`Failed to generate image: ${err instanceof Error ? err.message : 'Unknown error'}`);
     return new Response(`Failed to generate image`, {
       status: 500,
     });

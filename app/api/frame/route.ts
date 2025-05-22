@@ -1,18 +1,11 @@
 import { NextRequest } from 'next/server';
 import { generateEIPSummary } from '../utils/generateSummary';
 
-// Types for Frame request
-type FrameRequest = {
-  untrustedData: {
-    buttonIndex?: number;
-    inputText?: string;
-    state?: {
-      page?: string;
-      eip?: string;
-      content?: string;
-    };
-  };
-};
+interface FrameState {
+  page?: string;
+  eip?: string;
+  content?: string;
+}
 
 function getFrameHtmlResponse({
   title,
@@ -27,7 +20,7 @@ function getFrameHtmlResponse({
   buttons?: Array<{ label: string; action?: 'post' | 'link' | 'mint' | 'input' }>;
   image?: { url: string; aspectRatio?: '1.91:1' | '1:1' };
   inputText?: string;
-  state?: any;
+  state?: FrameState;
 }) {
   const baseUrl = process.env.NEXT_PUBLIC_HOST || 'http://localhost:3000';
   
@@ -65,7 +58,7 @@ export async function POST(req: NextRequest) {
     console.log('Received request:', body);
 
     const { buttonIndex, inputText } = body.untrustedData;
-    const state = body.untrustedData.state;
+    const state = body.untrustedData.state as FrameState;
 
     // Initial state - show EIP input prompt
     if (!state?.page || state.page === 'input') {
@@ -116,7 +109,7 @@ export async function POST(req: NextRequest) {
             content: eipContent
           }
         });
-      } catch (error) {
+      } catch {
         return getFrameHtmlResponse({
           title: 'Error',
           description: 'EIP not found. Please try again with a valid EIP number.',
